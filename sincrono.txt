@@ -1,0 +1,1 @@
+Este mensaje se muestra hasta que se termine de leer el archivo

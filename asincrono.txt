@@ -1,0 +1,1 @@
+Este archivo se muestra antes de que se termine de leer el mensaje
