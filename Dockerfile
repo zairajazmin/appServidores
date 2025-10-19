@@ -2,12 +2,12 @@ FROM node:20
 
 RUN apt-get update && apt-get install -y git
 
-RUN git clone https://github.com/zairajazmin/appServidores-node.git /server.node
+WORKDIR /server.node
 
-WORKDIR /appServidor
+RUN git clone https://github.com/zairajazmin/appServidores.git /server.node
 
 RUN npm install
 
-Expose 3001
+EXPOSE 3001
 
-CMD ["node", "server,js"]
+CMD ["node", "server.js"]
