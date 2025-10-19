@@ -1,36 +1,26 @@
-# wrappy
+#Practica servidor en Node.js con Express
 
-Callback wrapping utility
+#Etapas:
+1. Hola mundo básico en index.html 
+2. Servidor HTTP en server.js
+3. Servidor síncrono (/síncrono)
+4. Servidor asíncrono (/asíncrono)
 
-## USAGE
+#Cómo ejecutar
+1. Correr la imagen de Docker appservidor dentro del archivo Dockerfile
+2.Dentro del localhost conectarse al puerto 3001
 
-```javascript
-var wrappy = require("wrappy")
+#Requisitos
+-Tener Node.js instalado
+-Instalar Express con npm
+-Tener Docker instalado
 
-// var wrapper = wrappy(wrapperFunction)
+#Despliegue
+El programa se ejecuta localmente
 
-// make sure a cb is called only once
-// See also: http://npm.im/once for this specific use case
-var once = wrappy(function (cb) {
-  var called = false
-  return function () {
-    if (called) return
-    called = true
-    return cb.apply(this, arguments)
-  }
-})
+#Construido con 
+Node.Js
 
-function printBoo () {
-  console.log('boo')
-}
-// has some rando property
-printBoo.iAmBooPrinter = true
+#Autores
+Zaira Jazmin Gonzalez Moreno --Desarrollo y documentación
 
-var onlyPrintOnce = once(printBoo)
-
-onlyPrintOnce() // prints 'boo'
-onlyPrintOnce() // does nothing
-
-// random property is retained!
-assert.equal(onlyPrintOnce.iAmBooPrinter, true)
-```
